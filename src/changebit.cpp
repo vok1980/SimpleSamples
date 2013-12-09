@@ -18,17 +18,17 @@ void PrintBits(const char val)
 
 bool ChangeBit(char *pByte, int iBitNumber)
 {
-    std::cout << "Change " << iBitNumber << "th bit" << std::endl;
-    PrintBits(*pByte);
+	std::cout << "Change " << iBitNumber << "th bit" << std::endl;
+	PrintBits(*pByte);
     
 	if ( (sizeof(char) * 8 - 1 < iBitNumber) || iBitNumber < 0 )
-    {
-        std::cerr << "bit number " << iBitNumber << " is out of range" << std::endl << std::endl;;
+	{
+		std::cout << "bit number " << iBitNumber << " is out of range" << std::endl << std::endl << std::flush;;
 		return false;
-    }
+	}
 
 	*pByte ^= ( 1 << iBitNumber );
-    PrintBits(*pByte);
-    std::cout << std::endl;
+	PrintBits(*pByte);
+	std::cout << std::endl << std::flush;
 	return true;
 }
