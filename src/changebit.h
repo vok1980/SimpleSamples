@@ -1,4 +1,4 @@
 
 #pragma once
 
-void ChangeBit(char *pByte, int iBitNumber);
+bool ChangeBit(char *pByte, int iBitNumber);
