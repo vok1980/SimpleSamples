@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "changebit.h"
 
+#include "sqlite/sqlite3.h"
 
 
 
@@ -16,6 +17,14 @@ int main(int argc, char const *argv[])
 	{
 		int iBitNum = rand() % 10 - 1;
 		ChangeBit(&c, iBitNum);
+	}
+
+
+	{
+		sqlite3* db;
+    	sqlite3** dbpointer = &db;
+    	const char* dbname = "test.db";
+    	sqlite3_open(dbname, dbpointer);
 	}
 
 	return 0;
